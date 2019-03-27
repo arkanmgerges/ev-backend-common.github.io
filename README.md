@@ -1,5 +1,6 @@
 ## Ethervision Backend - Common Library
 [![CircleCI](https://circleci.com/gh/arkanmgerges/ev-backend-common.svg?style=svg)](https://circleci.com/gh/arkanmgerges/ev-backend-common)
+[![Doc](docs.svg)](doc)
 
 This is a library that is used as a node package that can be installed using npm.
 
