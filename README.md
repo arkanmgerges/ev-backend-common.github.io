@@ -1,4 +1,5 @@
 ## Welcome to GitHub Pages
+[![CircleCI](https://circleci.com/gh/arkanmgerges/ev-backend-common.svg?style=svg)](https://circleci.com/gh/arkanmgerges/ev-backend-common)
 
 You can use the [editor on GitHub](https://github.com/arkanmgerges/ev-backend-common.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
