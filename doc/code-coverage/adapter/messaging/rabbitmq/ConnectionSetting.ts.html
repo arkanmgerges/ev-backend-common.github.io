@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for adapter/messaging/rabbitmq/ConnectionFactory.ts</title>
+    <title>Code coverage report for adapter/messaging/rabbitmq/ConnectionSetting.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">adapter/messaging/rabbitmq</a> ConnectionFactory.ts
+      <a href="../../../index.html">All files</a> / <a href="index.html">adapter/messaging/rabbitmq</a> ConnectionSetting.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>0/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/13</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>0/22</span>
       </div>
     </div>
     <p class="quiet">
@@ -162,7 +162,113 @@
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
 <a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,7 +287,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,24 +295,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,6 +313,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,18 +333,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -256,142 +343,214 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { connect as amqpConnect, Connection } from "amqplib";</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as assert from "assertion";</span>
 &nbsp;
 /**
- * I'm a connection factory that will provide a connection to RabbitMQ.
+ * I am a configuration for making a connection to
+ * RabbitMQ. I include information for the host, port,
+ * virtual host, and user.
  *
  * @author Arkan M. Gerges &lt;arkan.m.gerges@gmail.com&gt;
  */
-<span class="cstat-no" title="statement not covered" >export class C</span>onnectionFactory {
-	private _hostName: string;
-	private _port: number;
-	private _virtualHost: string;
-	private _username: string;
-	private _password: string;
+<span class="cstat-no" title="statement not covered" >export class C</span>onnectionSetting {
+	/** My hostName, which is the name of the host server. */
+	private _hostName!: string;
+&nbsp;
+	/** My password, which is the password of the connecting user. */
+	private _password!: string;
+&nbsp;
+	/** My port, which is the host server port. */
+	private _port!: number;
+&nbsp;
+	/** My username, which is the name of the connecting user. */
+	private _username!: string;
+&nbsp;
+	/** My virtualHost, which is the name of the RabbitMQ virtual host. */
+	private _virtualHost!: string;
 &nbsp;
 	/**
-	 * Answers my port number.
-	 * @return The port number of the connection
+	 * Answers a new ConnectionSetting with defaults.
+	 * @return ConnectionSetting
 	 */
-	public <span class="fstat-no" title="function not covered" >port(</span>): number {
-<span class="cstat-no" title="statement not covered" >		return this._port;</span>
+	static instance(): ConnectionSetting;
+&nbsp;
+	/**
+	 * Answers a new ConnectionSetting with a specific
+	 * host name and virtual host and remaining defaults.
+	 * @param hostName The String name of the host server
+	 * @param port The int port number on the host server, or -1
+	 * @param virtualHost The String name of the virtual host
+	 * @return ConnectionSetting
+	 */
+	static instance(
+		hostName: string,
+		port?: number,
+		virtualHost?: string
+	): ConnectionSetting;
+&nbsp;
+	/**
+	 * Constructs my default state.
+	 * @param hostName The String name of the host server
+	 * @param port The int port number on the host server, or -1
+	 * @param virtualHost The String name of the virtual host
+	 * @param username The String name of the user, or null
+	 * @param password The String password of the user, or null
+	 */
+<span class="fstat-no" title="function not covered" >	static </span>instance(
+		hostName?: string,
+		port?: number,
+		virtualHost?: string,
+		username?: string,
+		password?: string
+	): ConnectionSetting {
+<span class="cstat-no" title="statement not covered" >		return new this(</span>
+			hostName || "localhost",
+			port || -1,
+			virtualHost || "/",
+			username || "rabbitmq",
+			password || "rabbitmq"
+		);
 	}
 &nbsp;
 	/**
-	 * Set my port number.
-	 * @param port The number of the port for the connection
+	 * Constructs my default state.
 	 */
-	public <span class="fstat-no" title="function not covered" >setPort(</span>port: number): void {
-<span class="cstat-no" title="statement not covered" >		this._port = port;</span>
+<span class="fstat-no" title="function not covered" >	constructor(</span>
+		hostName: string,
+		port: number,
+		virtualHost: string,
+		username: string,
+		password: string
+	) {
+<span class="cstat-no" title="statement not covered" >		this.setHostName(hostName);</span>
+<span class="cstat-no" title="statement not covered" >		this.setPassword(password);</span>
+<span class="cstat-no" title="statement not covered" >		this.setPort(port);</span>
+<span class="cstat-no" title="statement not covered" >		this.setUsername(username);</span>
+<span class="cstat-no" title="statement not covered" >		this.setVirtualHost(virtualHost);</span>
 	}
-&nbsp;
 	/**
-	 * Answers my virtual host of the connection.
-	 * @return The virtual host used in the connection
+	 * Answers my hostName.
 	 */
-	public <span class="fstat-no" title="function not covered" >virtualHost(</span>): string {
-<span class="cstat-no" title="statement not covered" >		return this._virtualHost;</span>
+<span class="fstat-no" title="function not covered" >	hostName(</span>): string {
+<span class="cstat-no" title="statement not covered" >		return this._hostName;</span>
 	}
-&nbsp;
 	/**
-	 * Set my virtual host to be used in the connection.
-	 * @param virtualHost The string of the virtual host to be set for the connection
+	 * Sets my hostName.
+	 * @param hostName The string to set as my hostName
 	 */
-	public <span class="fstat-no" title="function not covered" >setVirtualHost(</span>virtualHost: string): void {
-<span class="cstat-no" title="statement not covered" >		this._virtualHost = virtualHost;</span>
+	private <span class="fstat-no" title="function not covered" >setHostName(</span>hostName: string): void {
+<span class="cstat-no" title="statement not covered" >		assert.notEqual(hostName, "", "Host name must be provided.");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		this._hostName = hostName;</span>
 	}
-&nbsp;
 	/**
-	 * Answers my connection username
-	 * @return The username that is used in the connection
+	 * Answers my password.
 	 */
-	public <span class="fstat-no" title="function not covered" >username(</span>): string {
-<span class="cstat-no" title="statement not covered" >		return this._username;</span>
-	}
-&nbsp;
-	/**
-	 * Set my username for the connection
-	 */
-	public <span class="fstat-no" title="function not covered" >setUsername(</span>username: string): void {
-<span class="cstat-no" title="statement not covered" >		this._username = username;</span>
-	}
-&nbsp;
-	/**
-	 * Answers my connection password
-	 * @return The password that is used for this connection
-	 */
-	public <span class="fstat-no" title="function not covered" >password(</span>): string {
+<span class="fstat-no" title="function not covered" >	password(</span>): string {
 <span class="cstat-no" title="statement not covered" >		return this._password;</span>
 	}
-&nbsp;
 	/**
-	 * Set my connection password
-	 * @param password The string that is used as a connection password
+	 * Sets my password.
+	 * @param password The string to set as my password
 	 */
-	public <span class="fstat-no" title="function not covered" >setPassword(</span>password: string): void {
+	private <span class="fstat-no" title="function not covered" >setPassword(</span>password: string): void {
 <span class="cstat-no" title="statement not covered" >		this._password = password;</span>
 	}
 &nbsp;
 	/**
-	 * Set the host name used in the connection
-	 * @param hostName The string of the host name used in the connection
+	 * Answers whether or not a port is included.
 	 */
-<span class="fstat-no" title="function not covered" >	setHost(</span>hostName: string): void {
-<span class="cstat-no" title="statement not covered" >		this._hostName = hostName;</span>
+<span class="fstat-no" title="function not covered" >	port(</span>): number {
+<span class="cstat-no" title="statement not covered" >		return this._port;</span>
 	}
-&nbsp;
 	/**
-	 * Answers the host name used in the connection
-	 * @return The host name used in the connection
+	 * Answers whether or not a port is included.
 	 */
-<span class="fstat-no" title="function not covered" >	host(</span>): string {
-<span class="cstat-no" title="statement not covered" >		return this._hostName;</span>
+<span class="fstat-no" title="function not covered" >	hasPort(</span>): boolean {
+<span class="cstat-no" title="statement not covered" >		return this.port() &gt; 0;</span>
 	}
-&nbsp;
-<span class="fstat-no" title="function not covered" >	constructor() {</span>
-<span class="cstat-no" title="statement not covered" >		this._hostName = "";</span>
-<span class="cstat-no" title="statement not covered" >		this._port = -1;</span>
-<span class="cstat-no" title="statement not covered" >		this._virtualHost = "";</span>
-<span class="cstat-no" title="statement not covered" >		this._username = "";</span>
-<span class="cstat-no" title="statement not covered" >		this._password = "";</span>
+	/**
+	 * Sets my port.
+	 * @param port The int to set as my port
+	 */
+	private <span class="fstat-no" title="function not covered" >setPort(</span>port: number): void {
+<span class="cstat-no" title="statement not covered" >		this._port = port;</span>
 	}
+	/**
+	 * Answers whether or not the user credentials are included.
+	 */
+<span class="fstat-no" title="function not covered" >	hasUserCredentials(</span>): boolean {
+<span class="cstat-no" title="statement not covered" >		return this.username() != null &amp;&amp; this.password() != null;</span>
+	}
+	/**
+	 * Answers my username.
+	 */
+<span class="fstat-no" title="function not covered" >	username(</span>): string {
+<span class="cstat-no" title="statement not covered" >		return this._username;</span>
+	}
+	/**
+	 * Sets my username.
+	 * @param username The string to set as my username
+	 */
+	private <span class="fstat-no" title="function not covered" >setUsername(</span>username: string): void {
+<span class="cstat-no" title="statement not covered" >		this._username = username;</span>
+	}
+	/**
+	 * Answers my virtual host.
+	 * @return The virtual host used in the connection
+	 */
+<span class="fstat-no" title="function not covered" >	virtualHost(</span>): string {
+<span class="cstat-no" title="statement not covered" >		return this._virtualHost;</span>
+	}
+	/**
+	 * Sets my virtual host.
+	 * @param virtualHost The string to set as my virtualHost
+	 */
+	private <span class="fstat-no" title="function not covered" >setVirtualHost(</span>virtualHost: string): void {
+<span class="cstat-no" title="statement not covered" >		assert.notEqual(virtualHost, "", "Virtual host must be provided.");</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >	newConnection(</span>): Promise&lt;Connection&gt; {
-<span class="cstat-no" title="statement not covered" >		return new Promise(<span class="fstat-no" title="function not covered" >async </span>(resolve, reject) =&gt; {</span>
-			try {
-				let conn = <span class="cstat-no" title="statement not covered" >await amqpConnect(</span>
-					`amqp://${this.username()}:${this.password()}@${this.host()}/${encodeURIComponent(
-						this.virtualHost()
-					)}`
-				);
-<span class="cstat-no" title="statement not covered" >				resolve(conn);</span>
-			} catch (e) {
-<span class="cstat-no" title="statement not covered" >				reject(e);</span>
-			}
-		});
+<span class="cstat-no" title="statement not covered" >		this._virtualHost = virtualHost;</span>
 	}
 }
 &nbsp;</pre></td></tr>
@@ -400,7 +559,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 29 2019 13:38:29 GMT+0000 (Coordinated Universal Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 29 2019 17:51:09 GMT+0000 (Coordinated Universal Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>
