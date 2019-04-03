@@ -931,6 +931,9 @@ img { max-width: 100%; }
 					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#_tag" class="tsd-kind-icon">_tag</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#ack" class="tsd-kind-icon">ack</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#close" class="tsd-kind-icon">close</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -957,9 +960,6 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#setqueue" class="tsd-kind-icon">set<wbr>Queue</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#tag" class="tsd-kind-icon">tag</a>
-				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#autoacknowledgedinstance" class="tsd-kind-icon">auto<wbr>Acknowledged<wbr>Instance</a>
 				</li>
@@ -984,7 +984,7 @@ img { max-width: 100%; }
 				</div>
 				<dl class="tsd-comment-tags">
 					<dt>author</dt>
-					<dd><p>Arkan M. Gerges <a href="mailto:&#97;&#114;&#107;&#97;&#110;&#46;&#109;&#x2e;&#103;&#101;&#114;&#x67;&#x65;&#115;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#97;&#114;&#107;&#97;&#110;&#46;&#109;&#x2e;&#103;&#101;&#114;&#x67;&#x65;&#115;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;</a></p>
+					<dd><p>Arkan M. Gerges <a href="mailto:&#x61;&#114;&#x6b;&#x61;&#110;&#46;&#x6d;&#x2e;&#x67;&#101;&#x72;&#103;&#x65;&#115;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#x61;&#114;&#x6b;&#x61;&#110;&#46;&#x6d;&#x2e;&#x67;&#101;&#x72;&#103;&#x65;&#115;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
 					</dd>
 				</dl>
 			</div>
@@ -1019,6 +1019,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#ack" class="tsd-kind-icon">ack</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#close" class="tsd-kind-icon">close</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#equalizemessagedistribution" class="tsd-kind-icon">equalize<wbr>Message<wbr>Distribution</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#isautoacknowledged" class="tsd-kind-icon">is<wbr>Auto<wbr>Acknowledged</a></li>
@@ -1028,7 +1029,6 @@ img { max-width: 100%; }
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#setautoacknowledged" class="tsd-kind-icon">set<wbr>Auto<wbr>Acknowledged</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#setclosed" class="tsd-kind-icon">set<wbr>Closed</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#setqueue" class="tsd-kind-icon">set<wbr>Queue</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#tag" class="tsd-kind-icon">tag</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#autoacknowledgedinstance" class="tsd-kind-icon">auto<wbr>Acknowledged<wbr>Instance</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#instance" class="tsd-kind-icon">instance</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_adapter_messaging_rabbitmq_messageconsumer_.messageconsumer.html#manualacknowledgedinstance" class="tsd-kind-icon">manual<wbr>Acknowledged<wbr>Instance</a></li>
@@ -1049,7 +1049,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L88">adapter/messaging/rabbitmq/MessageConsumer.ts:88</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L82">adapter/messaging/rabbitmq/MessageConsumer.ts:82</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1089,7 +1089,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">_auto<wbr>Acknowledged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L14">adapter/messaging/rabbitmq/MessageConsumer.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L15">adapter/messaging/rabbitmq/MessageConsumer.ts:15</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1104,7 +1104,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">_closed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L17">adapter/messaging/rabbitmq/MessageConsumer.ts:17</a></li>
+						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L18">adapter/messaging/rabbitmq/MessageConsumer.ts:18</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1119,7 +1119,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">_queue<span class="tsd-signature-symbol">:</span> <a href="_adapter_messaging_rabbitmq_queue_.queue.html" class="tsd-signature-type">Queue</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L20">adapter/messaging/rabbitmq/MessageConsumer.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L21">adapter/messaging/rabbitmq/MessageConsumer.ts:21</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1134,7 +1134,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">_tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L23">adapter/messaging/rabbitmq/MessageConsumer.ts:23</a></li>
+						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L24">adapter/messaging/rabbitmq/MessageConsumer.ts:24</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1147,6 +1147,40 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="ack" class="tsd-anchor"></a>
+				<h3>ack</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">ack<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L156">adapter/messaging/rabbitmq/MessageConsumer.ts:156</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Acknowledge the message with verification if the consumer is auto acknowledged,
+									because this can close the channel if the consumer is set with noAck: true and
+									the message is acknowledged manually. I will check this and assure if noAck is
+								set to false then I will allow to acknowledge the message manually</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>message: <span class="tsd-signature-type">Message</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The message that is used to for acknowledgment</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="close" class="tsd-anchor"></a>
 				<h3>close</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1156,7 +1190,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L59">adapter/messaging/rabbitmq/MessageConsumer.ts:59</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L60">adapter/messaging/rabbitmq/MessageConsumer.ts:60</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1178,7 +1212,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L75">adapter/messaging/rabbitmq/MessageConsumer.ts:75</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L76">adapter/messaging/rabbitmq/MessageConsumer.ts:76</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1201,7 +1235,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L103">adapter/messaging/rabbitmq/MessageConsumer.ts:103</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L97">adapter/messaging/rabbitmq/MessageConsumer.ts:97</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1223,7 +1257,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L67">adapter/messaging/rabbitmq/MessageConsumer.ts:67</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L68">adapter/messaging/rabbitmq/MessageConsumer.ts:68</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1245,7 +1279,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L126">adapter/messaging/rabbitmq/MessageConsumer.ts:126</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L120">adapter/messaging/rabbitmq/MessageConsumer.ts:120</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1261,13 +1295,13 @@ img { max-width: 100%; }
 				<a name="receivefor" class="tsd-anchor"></a>
 				<h3>receive<wbr>For</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">receive<wbr>For<span class="tsd-signature-symbol">(</span>messageListener<span class="tsd-signature-symbol">: </span><a href="_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html" class="tsd-signature-type">MessageListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">receive<wbr>For<span class="tsd-signature-symbol">(</span>messageListener<span class="tsd-signature-symbol">: </span><a href="_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html" class="tsd-signature-type">MessageListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L134">adapter/messaging/rabbitmq/MessageConsumer.ts:134</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L128">adapter/messaging/rabbitmq/MessageConsumer.ts:128</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1284,7 +1318,7 @@ img { max-width: 100%; }
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -1298,7 +1332,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L111">adapter/messaging/rabbitmq/MessageConsumer.ts:111</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L105">adapter/messaging/rabbitmq/MessageConsumer.ts:105</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1329,7 +1363,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L119">adapter/messaging/rabbitmq/MessageConsumer.ts:119</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L113">adapter/messaging/rabbitmq/MessageConsumer.ts:113</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1360,7 +1394,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L155">adapter/messaging/rabbitmq/MessageConsumer.ts:155</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L166">adapter/messaging/rabbitmq/MessageConsumer.ts:166</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1381,28 +1415,6 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="tag" class="tsd-anchor"></a>
-				<h3>tag</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L86">adapter/messaging/rabbitmq/MessageConsumer.ts:86</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Answers my tag, which was produced by the broker.</p>
-							</div>
-						</div>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 				<a name="autoacknowledgedinstance" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> auto<wbr>Acknowledged<wbr>Instance</h3>
@@ -1413,7 +1425,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L31">adapter/messaging/rabbitmq/MessageConsumer.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L32">adapter/messaging/rabbitmq/MessageConsumer.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1446,7 +1458,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L49">adapter/messaging/rabbitmq/MessageConsumer.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L50">adapter/messaging/rabbitmq/MessageConsumer.ts:50</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1484,7 +1496,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/83fb7c7/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L39">adapter/messaging/rabbitmq/MessageConsumer.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/bdeda08/src/adapter/messaging/rabbitmq/MessageConsumer.ts#L40">adapter/messaging/rabbitmq/MessageConsumer.ts:40</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
