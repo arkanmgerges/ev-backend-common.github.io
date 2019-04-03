@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for domain/model/DomainEventPublisher.ts</title>
+    <title>Code coverage report for port/adapter/messaging/rabbitmq/MessageListener.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">domain/model</a> DomainEventPublisher.ts
+      <a href="../../../../index.html">All files</a> / <a href="index.html">port/adapter/messaging/rabbitmq</a> MessageListener.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>3/3</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,97 +92,106 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DomainEvent } from "./DomainEvent";
-import { DomainEventSubscriber } from "./DomainEventSubscriber";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Message } from "amqplib";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export class D</span>omainEventPublisher {
-	private <span class="cstat-no" title="statement not covered" >_id: number = 0;</span>
-	private _subscribers: DomainEventSubscriber[];
-	private static <span class="cstat-no" title="statement not covered" >_instance: DomainEventPublisher = null;</span>
-&nbsp;
-	public <span class="fstat-no" title="function not covered" >static </span>instance(): DomainEventPublisher {
-		if (null === DomainEventPublisher._instance) {
-<span class="cstat-no" title="statement not covered" >			DomainEventPublisher._instance = new this();</span>
-		}
-&nbsp;
-<span class="cstat-no" title="statement not covered" >		return DomainEventPublisher._instance;</span>
+/**
+ * I am a message listener, which is given each message received
+ * by a MessageConsumer. I am also an adapter because I provide
+ * defaults for both handleMessage() behaviors. A typical subclass
+ * would override the handleMessage() based on its
+ * type.
+ *
+ * @author Arkan M. Gerges &lt;arkan.m.gerges@gmail.com&gt;
+ */
+export abstract class MessageListener {
+	/** This message is set by the Queue, and this will let MessageConsumer to
+	 * nack on error by using this message as a parameter for nack
+	 */
+	private _message: Message;
+	/**
+	 * The current message that is received by this listener
+	 * @param message This message is set by the queue automatically
+	 */
+	public setCurrentMessage(message: Message): void {
+		this._message = message;
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	private constructor() {</span>
-<span class="cstat-no" title="statement not covered" >		this._subscribers = [];</span>
+	/**
+	 * This message is set by the queue and is used whenever there is a need to
+	 * nack or ack the message to the channel when some exception has happened.
+	 * @return The message structure received by the queue
+	 */
+	public message(): Message {
+		return this._message;
 	}
 &nbsp;
-	public <span class="fstat-no" title="function not covered" >subscribe(</span>domainEventSubscriber: DomainEventSubscriber): number {
-		let id: number = <span class="cstat-no" title="statement not covered" >this._id;</span>
-<span class="cstat-no" title="statement not covered" >		this._subscribers[id] = domainEventSubscriber;</span>
-<span class="cstat-no" title="statement not covered" >		this._id++;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >		return id;</span>
-	}
-&nbsp;
-	public <span class="fstat-no" title="function not covered" >ofId(</span>id: number): DomainEventSubscriber | null {
-<span class="cstat-no" title="statement not covered" >		return typeof this._subscribers[id] !== "undefined"</span>
-			? this._subscribers[id]
-			: null;
-	}
-&nbsp;
-	public <span class="fstat-no" title="function not covered" >unsubscribe(</span>id: number): void {
-<span class="cstat-no" title="statement not covered" >		delete this._subscribers[id];</span>
-	}
-&nbsp;
-	public <span class="fstat-no" title="function not covered" >publish(</span>domainEvent: DomainEvent): void {
-<span class="cstat-no" title="statement not covered" >		this._subscribers.forEach(<span class="fstat-no" title="function not covered" >(a</span>Subscriber: DomainEventSubscriber) =&gt; {</span>
-			if (aSubscriber.isSubscribedTo(domainEvent)) {
-<span class="cstat-no" title="statement not covered" >				aSubscriber.handle(domainEvent);</span>
-			}
-		});
-	}
+	/**
+	 * Handles  message. If any message exception is thrown by
+	 * my implementor its isRetry() is examined and, if true, the
+	 * message being handled will be nack'd and re-queued. Otherwise,
+	 * if its isRetry() is false the message will be rejected/failed
+	 * (not re-queued). If any other exception is thrown the message
+	 * will be considered not handled and is rejected/failed.
+	 * @param message The message structure that needs to be handled
+	 * @param ack The callback that can be used to acknowledge the message
+	 * @throws Exception when any problem occurs and the message must not be acknowledged
+	 */
+	abstract handleMessage(
+		message: Message,
+		ack: (message: Message) =&gt; void
+	): void;
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -193,7 +202,7 @@ import { DomainEventSubscriber } from "./DomainEventSubscriber";
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 03 2019 18:45:00 GMT+0000 (Coordinated Universal Time)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="../../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -201,7 +210,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
-<script src="../../block-navigation.js"></script>
+<script src="../../../../sorter.js"></script>
+<script src="../../../../block-navigation.js"></script>
 </body>
 </html>

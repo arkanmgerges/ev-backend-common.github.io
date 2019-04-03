@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ev-backend-common | ev-backend-common</title>
+	<title>MessageListener | ev-backend-common</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -912,33 +912,212 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class="current tsd-kind-class tsd-parent-kind-external-module">
+			<a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html" class="tsd-kind-icon">Message<wbr>Listener</a>
+			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#_message" class="tsd-kind-icon">_message</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#handlemessage" class="tsd-kind-icon">handle<wbr>Message</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#message" class="tsd-kind-icon">message</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#setcurrentmessage" class="tsd-kind-icon">set<wbr>Current<wbr>Message</a>
+				</li>
+			</ul>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>I am a message listener, which is given each message received
+						by a MessageConsumer. I am also an adapter because I provide
+						defaults for both handleMessage() behaviors. A typical subclass
+						would override the handleMessage() based on its
+					type.</p>
+				</div>
+				<dl class="tsd-comment-tags">
+					<dt>author</dt>
+					<dd><p>Arkan M. Gerges <a href="mailto:&#x61;&#114;&#x6b;&#x61;&#110;&#x2e;&#x6d;&#x2e;&#103;&#101;&#x72;&#x67;&#101;&#115;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#x61;&#114;&#x6b;&#x61;&#110;&#x2e;&#x6d;&#x2e;&#103;&#101;&#x72;&#x67;&#101;&#115;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+					</dd>
+				</dl>
+			</div>
+		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">MessageListener</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
-					<section class="tsd-index-section ">
-						<h3>External modules</h3>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-external-module"><a href="modules/_domain_event_storedevent_.html" class="tsd-kind-icon">"domain/event/<wbr>Stored<wbr>Event"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_domain_model_domainevent_.html" class="tsd-kind-icon">"domain/model/<wbr>Domain<wbr>Event"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_domain_model_domaineventpublisher_.html" class="tsd-kind-icon">"domain/model/<wbr>Domain<wbr>Event<wbr>Publisher"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_domain_model_domaineventsubscriber_.html" class="tsd-kind-icon">"domain/model/<wbr>Domain<wbr>Event<wbr>Subscriber"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_brokerchannel_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Broker<wbr>Channel"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_connectionfactory_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Connection<wbr>Factory"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_connectionsetting_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Connection<wbr>Setting"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_exchange_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Exchange"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_messageconsumer_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Message<wbr>Consumer"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_messageexception_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Message<wbr>Exception"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_messagelistener_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Message<wbr>Listener"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_port_adapter_messaging_rabbitmq_queue_.html" class="tsd-kind-icon">"port/adapter/messaging/rabbitmq/<wbr>Queue"</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#_message" class="tsd-kind-icon">_message</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Methods</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#handlemessage" class="tsd-kind-icon">handle<wbr>Message</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#message" class="tsd-kind-icon">message</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_port_adapter_messaging_rabbitmq_messagelistener_.messagelistener.html#setcurrentmessage" class="tsd-kind-icon">set<wbr>Current<wbr>Message</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="_message" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> _message</h3>
+				<div class="tsd-signature tsd-kind-icon">_message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Message</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/e873bed/src/port/adapter/messaging/rabbitmq/MessageListener.ts#L16">port/adapter/messaging/rabbitmq/MessageListener.ts:16</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This message is set by the Queue, and this will let MessageConsumer to
+						nack on error by using this message as a parameter for nack</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="handlemessage" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> handle<wbr>Message</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">handle<wbr>Message<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span>, ack<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/e873bed/src/port/adapter/messaging/rabbitmq/MessageListener.ts#L45">port/adapter/messaging/rabbitmq/MessageListener.ts:45</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Handles  message. If any message exception is thrown by
+									my implementor its isRetry() is examined and, if true, the
+									message being handled will be nack&#39;d and re-queued. Otherwise,
+									if its isRetry() is false the message will be rejected/failed
+									(not re-queued). If any other exception is thrown the message
+								will be considered not handled and is rejected/failed.</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>throws</dt>
+								<dd><p>Exception when any problem occurs and the message must not be acknowledged</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>message: <span class="tsd-signature-type">Message</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The message structure that needs to be handled</p>
+								</div>
+							</li>
+							<li>
+								<h5>ack: <span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The callback that can be used to acknowledge the message</p>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>message: <span class="tsd-signature-type">Message</span></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="message" class="tsd-anchor"></a>
+				<h3>message</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/e873bed/src/port/adapter/messaging/rabbitmq/MessageListener.ts#L30">port/adapter/messaging/rabbitmq/MessageListener.ts:30</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>This message is set by the queue and is used whenever there is a need to
+								nack or ack the message to the channel when some exception has happened.</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Message</span></h4>
+						<p>The message structure received by the queue</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="setcurrentmessage" class="tsd-anchor"></a>
+				<h3>set<wbr>Current<wbr>Message</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">set<wbr>Current<wbr>Message<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arkanmgerges/ev-backend-common/blob/e873bed/src/port/adapter/messaging/rabbitmq/MessageListener.ts#L21">port/adapter/messaging/rabbitmq/MessageListener.ts:21</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The current message that is received by this listener</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>message: <span class="tsd-signature-type">Message</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>This message is set by the queue automatically</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
