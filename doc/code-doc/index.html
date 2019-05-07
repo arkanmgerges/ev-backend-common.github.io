@@ -916,6 +916,243 @@ img { max-width: 100%; }
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<div class="tsd-panel tsd-typography">
+			<h2 id="ethervision-backend-common-library">Ethervision Backend - Common Library</h2>
+			<p><a href="https://circleci.com/gh/arkanmgerges/ev-backend-common"><img src="https://circleci.com/gh/arkanmgerges/ev-backend-common.svg?style=svg" alt="CircleCI"></a>
+			<a href="https://arkanmgerges.github.io/ev-backend-common.github.io/doc/code-doc/index.html"><img src="https://arkanmgerges.github.io/ev-backend-common.github.io/img/doc.svg" alt="Doc"></a></p>
+			<p>This is a library that is used as a node package that can be installed using npm.</p>
+			<p>This library is a common library that is can be used by different projects, it has some classes using typescript and they are some concrete and abstracted classes arranged for different purposes, some of them for example:</p>
+			<ul>
+				<li>Classes for using RabbitMQ messages system</li>
+				<li>Classes for event store</li>
+				<li>Classes for domain events</li>
+			</ul>
+			<p>And much more.</p>
+			<h2 id="code-documentation">Code documentation</h2>
+			<p>In order to learn more about the code classes and their methods you can visit <a href="https://arkanmgerges.github.io/ev-backend-common.github.io/doc/code-doc/index.html">code doc</a></p>
+			<h2 id="installation">Installation</h2>
+			<p>You can install this library using git url:
+			<code>npm i -S https://github.com/arkanmgerges/ev-backend-common.git</code></p>
+			<p>Also you need to have <code>ts-node</code> installed and that you can run typescript code</p>
+			<h2 id="how-to-use-rabbitmq-classes-using-this-library-">How to use RabbitMQ classes using this library?</h2>
+			<p>Let&#39;s take an example of creating an exhange that will be used to publish our messages using a key <code>test_key</code>
+			Let&#39;s take an example of using it, it is only for <strong>learning purposes</strong>.</p>
+			<h3 id="1-create-a-file-sender-ts-with-the-following-">1. Create a file <code>sender.ts</code> with the following:</h3>
+			<pre><code><span class="hljs-keyword">import</span> { Exchange, ConnectionSetting } <span class="hljs-keyword">from</span> <span class="hljs-string">'ev-backend-common'</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createExchange</span>(<span class="hljs-params">{
+    host,
+    port,
+    username,
+    password,
+    exchangeName,
+    isDurable
+}</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Exchange</span>&gt; </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> Exchange.topicInstance(
+            ConnectionSetting.instance(host, port, <span class="hljs-string">"/"</span>, username, password),
+            exchangeName,
+            isDurable
+        );
+}
+
+<span class="hljs-comment">// Run an async function</span>
+(<span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">let</span> exchange: Exchange = <span class="hljs-keyword">await</span> createExchange({
+            <span class="hljs-attr">host</span>: <span class="hljs-string">"localhost"</span>,
+            <span class="hljs-attr">port</span>: <span class="hljs-number">5672</span>,
+            <span class="hljs-attr">username</span>: <span class="hljs-string">"rabbitmq"</span>,
+            <span class="hljs-attr">password</span>: <span class="hljs-string">"rabbitmq"</span>,
+            <span class="hljs-attr">exchangeName</span>: <span class="hljs-string">"test_sender"</span>,
+            <span class="hljs-attr">isDurable</span>: <span class="hljs-literal">false</span>
+        });
+        <span class="hljs-keyword">let</span> counter = <span class="hljs-number">0</span>;
+        setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            exchange.publish(
+                <span class="hljs-string">"test_key"</span>,
+                <span class="hljs-string">`counter: <span class="hljs-subst">${counter}</span>, timerstamp: <span class="hljs-subst">${<span class="hljs-built_in">Date</span>.now()}</span>`</span>
+            );
+            counter++;
+        }, <span class="hljs-number">4000</span>);
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-built_in">console</span>.log(e);
+    }
+})();</code></pre><h3 id="2-create-a-file-receiver-ts-with-the-following-">2. Create a file <code>receiver.ts</code> with the following:</h3>
+			<pre><code><span class="hljs-keyword">import</span> { Exchange, Queue, MessageConsumer } <span class="hljs-keyword">from</span> <span class="hljs-string">"ev-backend-common"</span>;
+<span class="hljs-keyword">import</span> { ExchangeParams, QueueParams, ConnSetting } <span class="hljs-keyword">from</span> <span class="hljs-string">"./properties"</span>;
+<span class="hljs-keyword">import</span> MyListener <span class="hljs-keyword">from</span> <span class="hljs-string">"./MyListener"</span>;
+
+<span class="hljs-keyword">let</span> listenerName = <span class="hljs-string">'listener'</span>;
+<span class="hljs-keyword">let</span> queueName;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createQueue</span>(<span class="hljs-params">
+    exchangeParams: ExchangeParams,
+    queueParams: QueueParams
+</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Queue</span>&gt; </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// Create the exchange in order to bind to it, if it is already there, then this will not re-create it</span>
+        <span class="hljs-keyword">let</span> exchange = <span class="hljs-keyword">await</span> Exchange.topicInstance(
+            exchangeParams.connectionSetting,
+            exchangeParams.exchangeName,
+            exchangeParams.isDurable
+        );
+        <span class="hljs-comment">// Bind the queue to the exchange</span>
+        <span class="hljs-keyword">let</span> queue = <span class="hljs-keyword">await</span> Queue.individualExchangeSubscriberInstance(
+            exchange,
+            queueParams.queueName,
+            queueParams.keys
+        );
+        <span class="hljs-comment">// Create a consumer, with auto acknowledgment</span>
+        MessageConsumer.instance(queue, <span class="hljs-literal">true</span>).receiveFor(
+            <span class="hljs-comment">// The listener with a name and that is not crashable (this is done for learning purposes)</span>
+            <span class="hljs-keyword">new</span> MyListener(listenerName, <span class="hljs-literal">false</span>)
+        );
+
+        <span class="hljs-keyword">return</span> queue;
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-built_in">console</span>.log(e);
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Could not create queue: "</span> + e);
+    }
+}
+
+<span class="hljs-comment">// Run an async function</span>
+(<span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> args = process.argv.slice(<span class="hljs-number">2</span>);
+
+    <span class="hljs-keyword">if</span> (args.length == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'args: &lt;listener name&gt; &lt;queue name&gt;'</span>);
+        process.exit(<span class="hljs-number">1</span>);
+    }
+
+    listenerName = args[<span class="hljs-number">0</span>];
+    queueName = args[<span class="hljs-number">1</span>] || <span class="hljs-string">'test_queue1'</span>;
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">await</span> createQueue(
+            {
+                <span class="hljs-attr">connectionSetting</span>: ConnSetting.createInstance(),
+                <span class="hljs-attr">exchangeName</span>: <span class="hljs-string">"test_sender"</span>,
+                <span class="hljs-attr">isDurable</span>: <span class="hljs-literal">false</span>
+            },
+            {
+                <span class="hljs-attr">queueName</span>: queueName,
+                <span class="hljs-attr">keys</span>: [<span class="hljs-string">"test_key"</span>]
+            }
+        );
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-built_in">console</span>.log(e);
+    }
+})();
+</code></pre><h3 id="3-create-a-listener-mylistener-ts-with-the-following-">3. Create a listener <code>MyListener.ts</code> with the following:</h3>
+			<pre><code><span class="hljs-keyword">import</span> { Message } <span class="hljs-keyword">from</span> <span class="hljs-string">'amqplib'</span>;
+<span class="hljs-keyword">import</span> { MessageListener, MessageException } <span class="hljs-keyword">from</span> <span class="hljs-string">"ev-backend-common"</span>;
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> MyListener <span class="hljs-keyword">extends</span> MessageListener {
+    <span class="hljs-keyword">private</span> _name: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">private</span> _isThrowException: <span class="hljs-built_in">boolean</span>;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, throwException: <span class="hljs-built_in">boolean</span></span>) {
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>._name = name;
+        <span class="hljs-keyword">this</span>._isThrowException = throwException;
+    }
+
+    handleMessage(msg: Message, ack: <span class="hljs-function">(<span class="hljs-params">msg: Message</span>) =&gt;</span> <span class="hljs-built_in">void</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`listener <span class="hljs-subst">${this.name}</span>: <span class="hljs-subst">${msg.content.toString()}</span>`</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isThrowException()) {
+            <span class="hljs-keyword">throw</span> MessageException.instanceWithoutRetry(<span class="hljs-string">`listener <span class="hljs-subst">${this.name}</span>: throws an exception.`</span>);
+        }
+        ack(msg); <span class="hljs-comment">// Even if the channel is auto acknoledged, this will not crash it.</span>
+    }
+
+    <span class="hljs-keyword">public</span> isThrowException(): <span class="hljs-built_in">boolean</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._isThrowException;
+    } 
+}
+</code></pre><h3 id="4-create-a-config-properties-properties-ts-with-the-following-">4. Create a config properties <code>properties.ts</code> with the following:</h3>
+			<pre><code>import { ConnectionSetting } <span class="hljs-keyword">from</span> <span class="hljs-string">"ev-backend-common"</span>;
+
+
+<span class="hljs-builtin-name">export</span><span class="hljs-built_in"> interface </span>ExchangeParams {
+    connectionSetting: ConnectionSetting,
+    exchangeName: string;
+    isDurable: boolean;
+}
+
+<span class="hljs-builtin-name">export</span><span class="hljs-built_in"> interface </span>QueueParams {
+    queueName: string;
+    keys: string[];
+}
+
+<span class="hljs-builtin-name">export</span> class ConnSetting {
+    static createInstance(): ConnectionSetting {
+        return ConnectionSetting.instance(
+            <span class="hljs-string">"localhost"</span>,
+            5672,
+            <span class="hljs-string">"/"</span>,
+            <span class="hljs-string">"rabbitmq"</span>,
+            <span class="hljs-string">"rabbitmq"</span>
+        );
+    }
+}
+</code></pre><h3 id="5-open-3-terminals-to-run-one-sender-and-two-receivers">5. Open 3 terminals to run one sender and two receivers</h3>
+			<h4 id="terminal-1-">Terminal 1:</h4>
+			<pre><code>npx ts-<span class="hljs-keyword">node</span> <span class="hljs-title">sender</span></code></pre><h4 id="terminal-2-the-receiver-will-give-a-name-for-the-listener-and-the-name-of-the-queue">Terminal 2: the receiver will give a name for the listener and the name of the queue</h4>
+			<pre><code>npx ts-node receiver listener_1 test_queue1
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">0</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470153479</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">1</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470157479</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">2</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470161481</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">3</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470165481</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">4</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470169482</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">5</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470173484</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">6</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470177484</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">7</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470181485</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">8</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470185485</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">9</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470189486</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">10</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470193487</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">11</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470197488</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">12</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470201488</span>
+listener <span class="hljs-string">listener_1:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">13</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470205489</span>
+...</code></pre><h4 id="terminal-3-the-receiver-will-give-a-name-for-the-listener-and-the-name-of-the-queue">Terminal 3: the receiver will give a name for the listener and the name of the queue</h4>
+			<pre><code>npx ts-node receiver listener_2 test_queue2
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">0</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470153479</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">1</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470157479</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">2</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470161481</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">3</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470165481</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">4</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470169482</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">5</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470173484</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">6</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470177484</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">7</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470181485</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">8</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470185485</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">9</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470189486</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">10</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470193487</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">11</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470197488</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">12</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470201488</span>
+listener <span class="hljs-string">listener_2:</span> <span class="hljs-string">counter:</span> <span class="hljs-number">13</span>, <span class="hljs-string">timerstamp:</span> <span class="hljs-number">1554470205489</span>
+...</code></pre><p>You will get a fanout with key, each consumer will get the message in its queue.
+			If you want to do worker type, then you need to provide the same queue name.</p>
+			<h2 id="consumer-and-acknowledgment">Consumer and Acknowledgment</h2>
+			<p>Whenever you create a consumer with a manual acknowledgement, then the message listener will receive
+				acknowledge function, and you can also throw an exception using <code>MessageException.instanceWithRetry</code> which will
+			which will make the current message to be requeued.</p>
+			<pre><code><span class="hljs-type">MessageConsumer</span>.instance(queue, <span class="hljs-literal">true</span>).receiveFor(
+            <span class="hljs-comment">// The listener with a name and that is not crashable (this is done for learning purposes)</span>
+            <span class="hljs-keyword">new</span> <span class="hljs-type">MyListener</span>(listenerName, <span class="hljs-literal">false</span>)
+        );
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyListener</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MessageListener</span> </span>{
+    handleMessage(msg: <span class="hljs-type">Message</span>, ack: (msg: <span class="hljs-type">Message</span>) =&gt; void) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-type">MessageException</span>.instanceWithRetry(<span class="hljs-string">"I am throwing an exception and this string is the message exception"</span>);
+    }
+}</code></pre><h2 id="display-the-errors-on-the-console">Display the errors on the console</h2>
+			<p>You can enable displaying errors on the console by setting the environment variable <code>DEBUG</code> to <code>error</code></p>
+			<pre><code><span class="hljs-builtin-name">set</span> <span class="hljs-attribute">DEBUG</span>=error</code></pre><p>Also to disable it by:</p>
+			<pre><code><span class="hljs-builtin-name">set</span> <span class="hljs-attribute">DEBUG</span>=<span class="hljs-string">""</span></code></pre><h2 id="catching-events">Catching events</h2>
+			<p>Whenever you want to handle a connection, channel error on the queue or exchange you can use one of node events.EventEmitter functions</p>
+			<pre><code>... some code
+<span class="hljs-regexp">//</span> This will <span class="hljs-keyword">catch</span> the event one time, you can use <span class="hljs-string">'on'</span> to <span class="hljs-keyword">catch</span> it everytime
+queue.once(<span class="hljs-string">'closed'</span>, <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> { <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error happened through this queue: '</span> + e); });</code></pre>
+		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
